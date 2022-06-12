@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "fredoka-one";
+  src: url("./assets/fonts/Fredoka_One/FredokaOne-Regular.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "montserrat-regular";
+  src: url("./assets/fonts/Montserrat/Montserrat-Regular.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "montserrat-medium";
+  src: url("./assets/fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
+}
+
+.custom-checkbox label input[type="checkbox"] {
+  display: none;
+}
+
+/* Custom Scroll */
+.custom-scroll::-webkit-scrollbar {
+  /* width: 1px; /* width of the entire scrollbar */
+  height: 3px; /* height of the entire scrollbar */
+  margin: none; 
+}
+.custom-scroll::-webkit-scrollbar-track {
+  /* background: var(--purple-3); color of the tracking area */
+  background: #e1e1e1;
+    border-radius: 3px;
+}
+
+.container::-webkit-scrollbar-track:hover,
+.container::-webkit-scrollbar-track:active {
+  background: #d4d4d4;
+}
+
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #ccc;
+    border-radius: 6px;
+  /* background-color: #16f2b4; color of the scroll thumb */
+  /* border-radius: 20px; roundness of the scroll thumb */
+  /* border: 1px solid orange; --- creates padding around scroll thumb */
+}
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
