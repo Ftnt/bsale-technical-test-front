@@ -1,13 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  content: ["./index.html",
+  "./src/**/*.{vue,js,ts,jsx,tsx}",
+  "./main.js"],
   theme: {
-    extend: {
-      'hero': "url('/imagenes/2067191.png')"
-    },
-    colors: {
-      transparent: "transparent",
-      current: "currentColor",
+    extend: {},
+    colors:{
       white : "#fff",
       black : "#000",
       purple: {
@@ -38,8 +36,8 @@ module.exports = {
         2: "#ffc6e1",
         3: "#ffe7f2",
         100: "#ffc6e16c",
-      },
-    },
+      }
+    }
   },
   plugins: [],
-};
+}

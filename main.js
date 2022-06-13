@@ -24,18 +24,31 @@ function renderCategory(){
         let newName = name[0].toUpperCase() + name.substring(1);
         const btnCategory = document.createElement('button')
         btnCategory.classList.add("flex", "flex-col", "w-20","items-center","gap-3")
-        btnCategory.innerHTML = `<div
-          class="h-24 w-24 rounded-full bg-purple-0  bg-hero flex justify-center items-center hover:bg-purple-2 active:focus:transition-none active:focus:bg-purple-0">
-          <div class="max-w-lg block  p-4 text-center">
-            <img class="object-cover" src="./images/category/${id}.png" alt="">
-          </div>
-        </div>
-        <span class="text-gray-101 text-md text-center leading-tight h-full w-full flex justify-center">${newName}</span>`
+
+        const categoryElement = document.createElement('div')
+        categoryElement.classList.add("h-24", "w-24", "rounded-full","bg-purple-0","bg-hero","flex","justify-center","items-center","hover:bg-purple-2","active:focus:transition-none","active:focus:bg-purple-0")
+        
+        const divCategoryImage = document.createElement('div')
+        divCategoryImage.classList.add("max-w-lg", "block", "p-4","text-center")
+
+        const imgCategoryImage = document.createElement('img')
+        imgCategoryImage.classList.add("object-cover")
+        imgCategoryImage.src = `./images/category/${id}.png`
+
+        const spanCategoryName = document.createElement('span')
+        spanCategoryName.classList.add("text-gray-101", "text-md","text-center","leading-tight","h-full","w-full","flex","justify-center")
+        spanCategoryName.textContent = newName
         btnCategory.addEventListener('click', () => {
           $nameCategory.innerHTML = newName
           renderProducts(id)
         })
+
         $category.append(btnCategory)
+        btnCategory.append(categoryElement)
+        btnCategory.append(spanCategoryName)
+        categoryElement.append(divCategoryImage)
+        divCategoryImage.append(imgCategoryImage)
+        
       })
   }
 })
@@ -58,7 +71,7 @@ function renderProducts(idCategory) {
         <div class="w-44 h-full flex items-center justify-center mr-3 overflow-hidden rounded-lg">
         ${product.discount ?
           `<div class="absolute top-4 -left-2">
-            <div class="bg-yellow-0 w-11 h-3 rounded-tr-sm rounded-br-sm">
+            <div class="bg-yellow-0 w-12 h-3 rounded-tr-sm rounded-br-sm">
               <span class="absolute text-pink-0 text-[8px] text-center w-full h-auto font-semibold px-1">Desc.
               <span>${product.discount}</span>%</span>
             </div>
@@ -86,7 +99,7 @@ function renderProducts(idCategory) {
         </div>
       </div>
         `
-        $productList.append(productElement)
+    $productList.append(productElement)
       })
     }
   })
