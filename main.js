@@ -33,7 +33,7 @@ function renderCategory(){
 
         const imgCategoryImage = document.createElement('img')
         imgCategoryImage.classList.add("object-cover")
-        imgCategoryImage.src = `./images/category/${id}.png`
+        imgCategoryImage.src = `./images/${id}.svg`
 
         const spanCategoryName = document.createElement('span')
         spanCategoryName.classList.add("text-gray-101", "text-md","text-center","leading-tight","h-full","w-full","flex","justify-center")
@@ -76,7 +76,7 @@ function renderProducts(idCategory) {
               <span>${product.discount}</span>%</span>
             </div>
           </div>`: ''}
-          <img class="rounded-lg" src="${product.url_image ? product.url_image :'./images/No-image-available.png'}" />
+          <img class="rounded-lg" src="${product.url_image ? product.url_image :'./images/No-image-available.svg'}" />
         </div>
         <div class="w-full h-full flex flex-col justify-center py-1">
           <p class="font-bold capitalize text-gray-0 text-sm sm:text-base">
