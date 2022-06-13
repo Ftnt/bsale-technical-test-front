@@ -76,7 +76,7 @@ function renderProducts(idCategory) {
               <span>${product.discount}</span>%</span>
             </div>
           </div>`: ''}
-          <img class="rounded-lg" src="${product.url_image ? product.url_image :'./images/No-image-available.svg'}" />
+          <img class="rounded-lg" src="${product.url_image ? product.url_image :'https://i.ibb.co/m4gMHy6/No-image-available.png'}" />
         </div>
         <div class="w-full h-full flex flex-col justify-center py-1">
           <p class="font-bold capitalize text-gray-0 text-sm sm:text-base">
