@@ -20,7 +20,7 @@ function renderCategory(){
     const $nameCategory = document.querySelector('#nameCategory')
     $nameCategory.innerHTML = data[0].name[0].toUpperCase() + data[0].name.substring(1)
     if(status != 'error'){
-      data.forEach(({id,name}) => {
+      data.forEach(({id,name,img}) => {
         let newName = name[0].toUpperCase() + name.substring(1);
         const btnCategory = document.createElement('button')
         btnCategory.classList.add("flex", "flex-col", "w-20","items-center","gap-3")
@@ -33,7 +33,7 @@ function renderCategory(){
 
         const imgCategoryImage = document.createElement('img')
         imgCategoryImage.classList.add("object-cover")
-        imgCategoryImage.src = `./images/${id}.svg`
+        imgCategoryImage.src = img
 
         const spanCategoryName = document.createElement('span')
         spanCategoryName.classList.add("text-gray-101", "text-md","text-center","leading-tight","h-full","w-full","flex","justify-center")
