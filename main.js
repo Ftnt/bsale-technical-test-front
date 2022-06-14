@@ -46,7 +46,6 @@ function searchProduct(){
     if(product.code === 404){
       $notFount.classList.remove('hidden')
     }
-    console.log(product.code);
     renderProduct(product)
   })
 }
