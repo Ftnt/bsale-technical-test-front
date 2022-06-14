@@ -21,7 +21,7 @@ function renderProduct({data,status}){
             <span>${product.discount}</span>%</span>
           </div>
         </div>`: ''}
-        <img class="rounded-lg" src="${product.url_image ? product.url_image :'./images/No-image-available.png'}" />
+        <img class="rounded-lg" src="${product.url_image ? product.url_image :'https://i.ibb.co/m4gMHy6/No-image-available.png'}" />
       </div>
       <div class="w-full h-full flex flex-col justify-center py-1">
         <p class="font-bold capitalize text-gray-0 text-sm sm:text-base">
@@ -54,7 +54,7 @@ function renderCategory({data,status}){
   const $nameCategory = document.querySelector('#nameCategory')
   $nameCategory.innerHTML = data[0].name[0].toUpperCase() + data[0].name.substring(1)
   if(status != 'error'){
-    data.forEach(({id,name}) => {
+    data.forEach(({id,name,img}) => {
       let newName = name[0].toUpperCase() + name.substring(1);
       const btnCategory = document.createElement('button')
       btnCategory.classList.add("flex", "flex-col", "w-20","items-center","gap-3")
@@ -67,7 +67,7 @@ function renderCategory({data,status}){
 
       const imgCategoryImage = document.createElement('img')
       imgCategoryImage.classList.add("object-cover")
-      imgCategoryImage.src = `./images/category/${id}.png`
+      imgCategoryImage.src = img
 
       const spanCategoryName = document.createElement('span')
       spanCategoryName.classList.add("text-gray-101", "text-md","text-center","leading-tight","h-full","w-full","flex","justify-center")
